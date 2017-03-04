@@ -77,3 +77,20 @@ React.render(<Pagination />, container);
 ## License
 
 rc-pagination is released under the MIT license.
+
+
+## Fork Notes
+
+### one time
+- Fork repo
+- git clone locally
+- Run npm install, npm run build, npm start to build lib/build files
+- Remove build, lib, dist from .gitignore
+- git add and push everything into forked repo
+
+### to sync changes to this fork into project
+- make changes and push to forked repo (make sure build/lib files, if updated are pushed)
+- goto project using this fork and remove rc-pagination from node_modules / package.json
+- add "rc-pagination": "https://github.com/thereviewindex/pagination/tarball/master" to package.json
+- npm install
+
