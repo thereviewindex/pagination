@@ -37,6 +37,7 @@
     "saucelabs": "rc-tools run saucelabs",
     "test": "rc-tools run test",
     "chrome-test": "rc-tools run chrome-test",
+    "compile": "rc-tools run compile",
     "coverage": "rc-tools run coverage"
   },
   "devDependencies": {
