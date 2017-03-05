@@ -21164,7 +21164,7 @@
 	    if (hasCurrent && !hasOnChange) {
 	      console.warn('Warning: You provided a `current` prop to a Pagination component without an `onChange` handler. This will render a read-only component.'); // eslint-disable-line
 	    }
-	
+	    console.log(_this.props.relativePath);
 	    var current = props.defaultCurrent;
 	    if ('current' in props) {
 	      current = props.current;
@@ -21394,7 +21394,8 @@
 	          onClick: this._handleChange.bind(this, i),
 	          key: i,
 	          page: i,
-	          active: active
+	          active: active,
+	          relativePath: this.props.relativePath
 	        }));
 	      }
 	    } else {
@@ -21425,7 +21426,8 @@
 	        onClick: this._handleChange.bind(this, allPages),
 	        key: allPages,
 	        page: allPages,
-	        active: false
+	        active: false,
+	        relativePath: this.props.relativePath
 	      });
 	      firstPager = React.createElement(Pager, {
 	        locale: props.locale,
@@ -21433,7 +21435,8 @@
 	        onClick: this._handleChange.bind(this, 1),
 	        key: 1,
 	        page: 1,
-	        active: false
+	        active: false,
+	        relativePath: this.props.relativePath
 	      });
 	
 	      var left = Math.max(1, current - pageBufferSize);
@@ -21455,7 +21458,8 @@
 	          onClick: this._handleChange.bind(this, _i),
 	          key: _i,
 	          page: _i,
-	          active: _active
+	          active: _active,
+	          relativePath: this.props.relativePath
 	        }));
 	      }
 	
@@ -21549,7 +21553,8 @@
 	  pageSizeOptions: React.PropTypes.arrayOf(React.PropTypes.string),
 	  showTotal: React.PropTypes.func,
 	  locale: React.PropTypes.object,
-	  style: React.PropTypes.object
+	  style: React.PropTypes.object,
+	  relativePath: React.PropTypes.string
 	};
 	
 	Pagination.defaultProps = {
@@ -21600,6 +21605,11 @@
 	    var props = this.props;
 	    var prefixCls = props.rootPrefixCls + '-item';
 	    var cls = prefixCls + ' ' + prefixCls + '-' + props.page;
+	    var href = '';
+	
+	    if (this.props.relativePath) {
+	      href = this.props.relativePath;
+	    }
 	
 	    if (props.active) {
 	      cls = cls + ' ' + prefixCls + '-active';
@@ -21614,7 +21624,7 @@
 	      { title: props.page, className: cls, onClick: props.onClick },
 	      React.createElement(
 	        'a',
-	        { href: '/' + props.page },
+	        { href: href + '/' + props.page },
 	        props.page
 	      )
 	    );
@@ -21628,7 +21638,8 @@
 	  active: React.PropTypes.bool,
 	  last: React.PropTypes.bool,
 	  locale: React.PropTypes.object,
-	  className: React.PropTypes.string
+	  className: React.PropTypes.string,
+	  relativePath: React.PropTypes.string
 	};
 	
 	module.exports = Pager;
