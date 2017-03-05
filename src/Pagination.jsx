@@ -432,7 +432,6 @@ Pagination.defaultProps = {
   onShowSizeChange: noop,
   locale: LOCALE,
   style: {},
-  relativePath: '',
 };
 
 module.exports = Pagination;
