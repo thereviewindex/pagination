@@ -16,7 +16,6 @@ class Pagination extends React.Component {
     if (hasCurrent && !hasOnChange) {
       console.warn('Warning: You provided a `current` prop to a Pagination component without an `onChange` handler. This will render a read-only component.'); // eslint-disable-line
     }
-    console.log(this.props.relativePath);
     let current = props.defaultCurrent;
     if ('current' in props) {
       current = props.current;
