@@ -8,6 +8,7 @@ class Pager extends React.Component {
     let href = '';
 
     if (this.props.relativePath) {
+      console.log(this.props.relativePath);
       href = this.props.relativePath;
     }
 
@@ -19,6 +20,7 @@ class Pager extends React.Component {
       cls = `${cls} ${props.className}`;
     }
 
+    console.log(this.props.relativePath);
     return (
       <li title={props.page} className={cls} onClick={props.onClick}>
         <a href={`${href}/${props.page}`}>{props.page}</a>
