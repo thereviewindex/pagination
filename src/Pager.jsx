@@ -21,7 +21,9 @@ class Pager extends React.Component {
 
     return (
       <li title={props.page} className={cls}>
-        <a href={`${href}/${props.page}`} style={{ height: '100%', width: '100%' }}>{props.page}</a>
+        <a href={`${href}/${props.page}`}>
+          <div>{props.page}</div>
+        </a>
       </li>
     );
   }
