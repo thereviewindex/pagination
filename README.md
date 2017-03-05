@@ -92,7 +92,7 @@ rc-pagination is released under the MIT license.
 - npm install
 
 ### to sync changes to this fork into project
-- make changes and push to forked repo (make sure build/lib files, if updated are pushed)
+- make changes, 'npm run compile' and push to forked repo (make sure build/lib files, if updated are pushed)
 - goto project and remove rc-pagination from node_modules 
 - add "rc-pagination": "https://github.com/thereviewindex/pagination/tarball/master" to package.json
 - npm install
