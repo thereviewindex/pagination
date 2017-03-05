@@ -5,6 +5,11 @@ class Pager extends React.Component {
     const props = this.props;
     const prefixCls = `${props.rootPrefixCls}-item`;
     let cls = `${prefixCls} ${prefixCls}-${props.page}`;
+    let href = '';
+
+    if (this.props.relativePath) {
+      href = this.props.relativePath;
+    }
 
     if (props.active) {
       cls = `${cls} ${prefixCls}-active`;
@@ -16,7 +21,7 @@ class Pager extends React.Component {
 
     return (
       <li title={props.page} className={cls} onClick={props.onClick}>
-        <a href={`/${props.page}`}>{props.page}</a>
+        <a href={`${href}/${props.page}`}>{props.page}</a>
       </li>
     );
   }
@@ -28,6 +33,7 @@ Pager.propTypes = {
   last: React.PropTypes.bool,
   locale: React.PropTypes.object,
   className: React.PropTypes.string,
+  relativePath: React.PropTypes.string,
 };
 
 module.exports = Pager;

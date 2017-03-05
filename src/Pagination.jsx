@@ -247,6 +247,7 @@ class Pagination extends React.Component {
             key={i}
             page={i}
             active={active}
+            relativePath={this.props.relativePath}
           />
         );
       }
@@ -280,6 +281,7 @@ class Pagination extends React.Component {
           key={allPages}
           page={allPages}
           active={false}
+          relativePath={this.props.relativePath}
         />
       );
       firstPager = (
@@ -290,6 +292,7 @@ class Pagination extends React.Component {
           key={1}
           page={1}
           active={false}
+          relativePath={this.props.relativePath}
         />
       );
 
@@ -314,6 +317,7 @@ class Pagination extends React.Component {
             key={i}
             page={i}
             active={active}
+            relativePath={this.props.relativePath}
           />
         );
       }
@@ -410,6 +414,7 @@ Pagination.propTypes = {
   showTotal: React.PropTypes.func,
   locale: React.PropTypes.object,
   style: React.PropTypes.object,
+  relativePath: React.PropTypes.string,
 };
 
 Pagination.defaultProps = {
@@ -427,6 +432,7 @@ Pagination.defaultProps = {
   onShowSizeChange: noop,
   locale: LOCALE,
   style: {},
+  relativePath: '',
 };
 
 module.exports = Pagination;
