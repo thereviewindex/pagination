@@ -20,9 +20,11 @@ class Pager extends React.Component {
     }
 
     return (
-      <li title={props.page} className={cls}>
-        <a href={`${href}/${props.page}`}>{props.page}</a>
-      </li>
+      <a href={`${href}/${props.page}`}>
+        <li title={props.page} className={cls}>
+          <a>{props.page}</a>
+        </li>
+      </a>
     );
   }
 }
