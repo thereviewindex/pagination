@@ -226,10 +226,9 @@ class Pagination extends React.Component {
           </li>
           <li
             title={locale.next_page}
-            onClick={this._next}
             className={`${this._hasNext() ? '' : `${prefixCls}-disabled`} ${prefixCls}-next`}
           >
-            <a />
+            <a href={this._hasNext() ? `${props.relativePath}/${this.state.current + 1}` : null} />
           </li>
         </ul>
       );
@@ -375,10 +374,9 @@ class Pagination extends React.Component {
         {pagerList}
         <li
           title={locale.next_page}
-          onClick={this._next}
           className={`${this._hasNext() ? '' : `${prefixCls}-disabled`} ${prefixCls}-next`}
         >
-          <a />
+          <a href={this._hasNext() ? `${props.relativePath}/${this.state.current + 1}` : null} />
         </li>
         <Options
           locale={props.locale}
