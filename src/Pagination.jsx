@@ -210,7 +210,9 @@ class Pagination extends React.Component {
             title={locale.prev_page}
             className={`${this._hasPrev() ? '' : `${prefixCls}-disabled`} ${prefixCls}-prev`}
           >
-            <a href={this._hasPrev() ? `${props.relativePath}/${this.state.current - 1}` : null}>
+            <a href={this._hasPrev() ? `${props.relativePath}/${this.state.current - 1}` : null}
+              rel="prev"
+            >
               <div>
                 &#8249;
               </div>
@@ -231,7 +233,9 @@ class Pagination extends React.Component {
             title={locale.next_page}
             className={`${this._hasNext() ? '' : `${prefixCls}-disabled`} ${prefixCls}-next`}
           >
-            <a href={this._hasNext() ? `${props.relativePath}/${this.state.current + 1}` : null}>
+            <a href={this._hasNext() ? `${props.relativePath}/${this.state.current + 1}` : null}
+              rel="next"
+            >
               <div>
                 &#8250;
               </div>
@@ -375,7 +379,9 @@ class Pagination extends React.Component {
           title={locale.prev_page}
           className={`${this._hasPrev() ? '' : `${prefixCls}-disabled`} ${prefixCls}-prev`}
         >
-          <a href={this._hasPrev() ? `${props.relativePath}/${this.state.current - 1}` : null}>
+          <a href={this._hasPrev() ? `${props.relativePath}/${this.state.current - 1}` : null}
+            rel="prev"
+          >
             <div>
               &#8249;
             </div>
@@ -386,7 +392,9 @@ class Pagination extends React.Component {
           title={locale.next_page}
           className={`${this._hasNext() ? '' : `${prefixCls}-disabled`} ${prefixCls}-next`}
         >
-          <a href={this._hasNext() ? `${props.relativePath}/${this.state.current + 1}` : null}>
+          <a href={this._hasNext() ? `${props.relativePath}/${this.state.current + 1}` : null}
+            rel="next"
+          >
             <div>
               &#8250;
             </div>
