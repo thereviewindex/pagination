@@ -208,10 +208,13 @@ class Pagination extends React.Component {
         <ul className={`${prefixCls} ${prefixCls}-simple ${props.className}`}>
           <li
             title={locale.prev_page}
-            onClick={this._prev}
             className={`${this._hasPrev() ? '' : `${prefixCls}-disabled`} ${prefixCls}-prev`}
           >
-            <a />
+            <a href={this._hasPrev() ? `${props.relativePath}/${this.state.current - 1}` : null}>
+              <div>
+                &#8249;
+              </div>
+            </a>
           </li>
           <li title={`${this.state.current}/${allPages}`} className={`${prefixCls}-simple-pager`}>
             <input
@@ -228,7 +231,11 @@ class Pagination extends React.Component {
             title={locale.next_page}
             className={`${this._hasNext() ? '' : `${prefixCls}-disabled`} ${prefixCls}-next`}
           >
-            <a href={this._hasNext() ? `${props.relativePath}/${this.state.current + 1}` : null} />
+            <a href={this._hasNext() ? `${props.relativePath}/${this.state.current + 1}` : null}>
+              <div>
+                &#8250;
+              </div>
+            </a>
           </li>
         </ul>
       );
@@ -366,17 +373,24 @@ class Pagination extends React.Component {
         {totalText}
         <li
           title={locale.prev_page}
-          onClick={this._prev}
           className={`${this._hasPrev() ? '' : `${prefixCls}-disabled`} ${prefixCls}-prev`}
         >
-          <a />
+          <a href={this._hasPrev() ? `${props.relativePath}/${this.state.current - 1}` : null}>
+            <div>
+              &#8249;
+            </div>
+          </a>
         </li>
         {pagerList}
         <li
           title={locale.next_page}
           className={`${this._hasNext() ? '' : `${prefixCls}-disabled`} ${prefixCls}-next`}
         >
-          <a href={this._hasNext() ? `${props.relativePath}/${this.state.current + 1}` : null} />
+          <a href={this._hasNext() ? `${props.relativePath}/${this.state.current + 1}` : null}>
+            <div>
+              &#8250;
+            </div>
+          </a>
         </li>
         <Options
           locale={props.locale}
